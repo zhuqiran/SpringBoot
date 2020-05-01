@@ -1,0 +1,12 @@
+#配置服务器的端口和上下文地址
+server:
+  port: 8080
+  servlet:
+    context-path: /jsp-springboot
+
+#配置springboot的展示视图为jsp
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/01-springboot-primary/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02-jsp-springboot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/03-transaction-springBoot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04-mybatis-springboot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/05-thymeleaf-springboot/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

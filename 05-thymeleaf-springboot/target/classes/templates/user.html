@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>变量表达式</title>
+</head>
+<body>
+    <p>==================标准变量表达式=======================</p>
+    <p>
+        <span th:text="${user.id}">id</span>
+        <span th:text="${user.nick}">nick</span>
+        <span th:text="${user.phone}">phone</span>
+        <span th:text="${user.address}">address</span>
+    </p>
+
+    <p>==================选择变量表达式=======================</p>
+    <p th:object="${user}"> <!--先通过标准变量表达式从上下文中选取到user对象-->
+        <span th:text="*{id}">id</span>
+        <span th:text="*{nick}">nick</span>
+        <span th:text="*{phone}">phone</span>
+        <span th:text="*{address}">address</span>
+    </p>
+
+    <p>==================选择变量表达式和标准变量表达式可以混用=======================</p>
+    <p th:object="${user}"> <!--先通过标准变量表达式从上下文中选取到user对象-->
+        <span th:text="*{id}">id</span>
+        <span th:text="*{nick}">nick</span>
+        <span th:text="${user.phone}">phone</span>
+        <span th:text="${user.address}">address</span>
+    </p>
+
+    <p>==================选择变量表达式也可以像标准变量表达式那样使用=======================</p>
+    <p>
+        <span th:text="*{user.id}">id</span>
+        <span th:text="*{user.nick}">nick</span>
+        <span th:text="*{user.phone}">phone</span>
+        <span th:text="*{user.address}">address</span>
+    </p>
+
+    <p>==================URL变量表达式=======================</p>
+    <!--绝对路径-->
+    <a href="index.html" th:href="@{'http://localhost:8080/boot/user/info?id='+${user.id}}">查看</a>
+    <!--相对路径：相对于页面-->
+    <a href="index.html" th:href="@{'index?id=' + ${user.id}}">查看</a>
+    <!--相对路径：相对于项目-->
+    <a href="index.html" th:href="@{'/boot/index?id=' + ${user.id}}">查看</a>
+    <!--
+        上面三种情况对应的，生成后的路径
+        <a href="http://localhost:8080/boot/user/info?id=1">查看</a>
+        <a href="index?id=1">查看</a>
+        <a href="/05-thymeleaf/boot/index?id=1">查看</a>
+    -->
+</body>
+</html>
